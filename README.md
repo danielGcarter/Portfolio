@@ -16,9 +16,9 @@ A project portfolio for Daniel Carter summarizing his skills and abilities relat
   </dl>
   
   <dl> 
-  <dt>###Hiking Trail Data Structure Design</dt>
+  <dt>### Hiking Trail Data Structure Design</dt>
    A project consisting of design artifacts used in the development of a SQL database that tracks hiking permit requests, emergency contact information, hiking trails, and more.<br>
-  ####Content consist of:
+  Content consist of:
   <dd>-Hiking Trail Entity Relationship Diagram Draft</dd>
   <dd>-Hiking Trail Entity Relationship Diagram</dd>
   <dd>-Hiking Trail Entity Attribute Relationship Notation</dd>
