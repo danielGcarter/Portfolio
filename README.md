@@ -4,5 +4,5 @@ A project portfolio for Daniel Carter summarizing his skills and abilities relat
 # Contents:  
   <dl>
   <dt>Species Distribution ArcPy Scripting  </dt>
-  <dd>-SpeciesDistributionModel.py  </dd>
+  <dd>-SpeciesDistributionModel.py</dd>
   <dd>-</dd>
