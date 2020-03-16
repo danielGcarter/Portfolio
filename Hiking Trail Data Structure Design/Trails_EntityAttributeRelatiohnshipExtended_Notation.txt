@@ -1,0 +1,56 @@
+Trails:
+emerContact(#contactID, firstName:NAME!, lastName:NAME!, phone:PHONE_NUM!, street:STREET!, [city:CITY?, state:STATE?, zip:ZIP!], represents>hiker?) -No PO Box
+EC1, Bill, Smith, 1234567890, 123 Fake St., Monmouth, Oregon, 97361, n/a
+EC2, Ted, Bundy, 1230401233, 798 Real St., St. Louis, Missouri, 12345, n/a
+EC3, Al, Roker, 9887748393, 456 Couch St., Portland, Oregon, 97140, n/a
+EC4, April, Dwyer, 1273813284, 123 Monroe St., Corvallis, Oregon, 97330, n/a
+EC5, Mike, Jersey, 2400192341, 124 Monroe St., Corvallis, Oregon, 97330, n/a
+EC6, Dwight, Schrute, 1203984122, 4238 Busy St., Hollywood, California, 90001, n/a
+
+hiker(#hikerID, firstName:NAME!, lastName:NAME!, phone:PHONE_NUM?, street:STREET!, [city:CITY?, state:STATE?, zip:ZIP!], submits>permit*, identifies>emerContact!) -No PO Box
+H1, Joe, Smith, 1234567891, 753 Fake St., Independence, Oregon, 97351, n/a, EC1
+H2, Billy, Elliot, 381920313, 492 Ban Vuren Ave., Corvallis, Oregon, 97330, n/a, EC2
+H3, B.A., Country, 102384812, 1823 Main St., Sherwoord, Oregon, 97140, n/a, EC4
+H4, Ivana, Hike, 1230918212, 1203 SW Fake Ave., La Pine, Oregon, 97739, n/a, EC5
+H5, Bert, Macklin, 1931233142, 8312 Real st., Pawnee, Indiana, 12341, n/a, EC3
+H6, Michael, Scott, 1923123145, 1111 SW Penn Ave., Scranton, Pennsylvania, 18503, n/a, EC6
+
+permit(#permitID, dateArrival:DATE!, dateDeparture:DATE!, status:APPR_DENI!, identifies>hiker!, identifies>trail!, processed>adminBody!) -Departure Date must be more recent than Arrival Date
+P1, 1/3/2020, 1/5/2020, Approved, H1, 44.57688-123.27115, AB1
+P2, 2/3/2019, 2/5/2019, Denied, H2, 44.52345-123.42139, AB2
+P3, 4/6/2020, 7/5/2020, Approved, H2, 44.52345-123.42139, AB2
+P4, 1/3/2020, 1/5/2020, Denied, H3, 44.52345-123.42139, AB2
+P5, 1/3/2020, 1/5/2020, Approved, H6, 44.52345-123.42139, AB2
+P6, 1/3/2020, 1/5/2020, Denied, H4, 44.52345-123.42139, AB2
+
+trail(#headLatitude:DECI_LAT!, #headLongitude:DECI_LONG!, trailName:NAME?, difficulty:ESY_MDM_HRD?, owned>adminBody!, operated>searchRescue?, has>permit*) -n/a
+44.57688, -123.27115, Corvallis Hiking Trail, Easy, AB1, SR1, n/a
+44.85170, -123.20068, Monmouth Hiking Trail, Medium, AB2, SR2, n/a
+44.52345, -123.42139, Super Awesome Cool Trail, Hard, AB2, SR2, n/a
+44.12345, -123.53232, Bill Hickson Memorial Trail, Easy, AB4, SR5, n/a
+44.20391, -123.11111, Lost Lake Trail, Hard, AB2, SR6, n/a
+44.23456, -123.41234, Found Lake Trail, Easy, AB5, SR3, n/a
+
+adminBody(#orgID, orgName:NAME!, has>orgPhone*, street:STREET!, [city:CITY?, state:STATE?, zip:ZIP!], maintains>trail*, processes>permit*) -n/a
+AB1, Corvallis Parks and Rec, n/a, 1293 Real Rd., Corvallis, Oregon, 97330, n/a, n/a
+AB2, Monmouth Parks and Rec, n/a, 298 So Real Hwy., Monmouth, Oregon, 97361, n/a, n/a
+AB3, US Forest Service, n/a, 123 Cobalt Hwy., Portland, Oregon, 97202, n/a, n/a
+AB4, Oregon State Parks, n/a, 23981 Main St., Salem, Oregon, 92282, n/a, n/a
+AB5, National Parks Service, n/a, 1239 Where Ave., Portland, Oregon, 92128, n/a, n/a
+AB6, Bureau of Land Management, n/a, 2331 Franklin Ave., Bend, Oregon, 97730, n/a, n/a
+
+searchRescue(#orgID, orgName:NAME!, has>orgPhone*, crewSize:SIZE!, hasHelicopter:YESNO!, oversees>trail*, backsup>searchRescue!) -n/a
+SR1, Corvallis Search and Rescue, n/a, 4, Yes, n/a, SR2
+SR2, Monmouth Search and Rescue, n/a, 5, No, n/a, SR1
+SR3, Found Lake Search and Rescue, n/a, 25, Yes, n/a, SR6
+SR4, Western Oregon Search and Rescue, n/a, 7, No, n/a, SR4
+SR5, Mid-Valley Search and Rescue, n/a, 10, Yes, n/a, SR3
+SR6, Lost Lake Search and Rescue, n/a, 2, No, n/a, SR5
+
+orgPhone(#phoneNumber:PHONE_NUM!, department:DEPT!, type:TYPE!, assigned>searchRescue?, assigned>adminBody?) -US only, searchRescue XOR adminBody
+9877654123, Reception, Fax, SR1, NULL
+7895413254, CEO, Phone, SR2, NULL
+4468798452, Reception, phone, NULL, AB2
+1239411234, Facilities, Phone, NULL, AB3
+9523520345, Facilities, Phone, SR5, NULL
+1230984575, Front Desk, Fax, SR2, NULL
