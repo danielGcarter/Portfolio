@@ -12,3 +12,10 @@ A project portfolio for Daniel Carter summarizing his skills and abilities relat
   <dd>-Tamarack Species Distribution Model</dd>
   <dd>-Trillium Species Distribution Model</dd>
   </dl>
+  
+  <dl>
+  <dt>Hiking Trail Data Structure Design</dt>
+  <dd>-Hiking Trail Entity Relationship Diagram Draft</dd>
+  <dd>-Hiking Trail Entity Relationship Diagram</dd>
+  <dd>-Hiking Trail Entity Attribute Relationship Notation</dd>
+  </dl>
