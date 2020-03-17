@@ -23,3 +23,8 @@ A project portfolio for Daniel Carter summarizing his skills and abilities relat
   <dd>-Hiking Trail Entity Relationship Diagram</dd>
   <dd>-Hiking Trail Entity Attribute Relationship Notation</dd>
   </dl>
+  
+  <dl>
+  <dt>Change Analysis Project</dt>
+  <dd>Fischer Island, Corvallis, OR Change Analysis</dd>
+  </dl>
