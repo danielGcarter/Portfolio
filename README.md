@@ -26,5 +26,5 @@ A project portfolio for Daniel Carter summarizing his skills and abilities relat
   
   <dl>
   <dt>Change Analysis Project</dt>
-  <dd>Fischer Island, Corvallis, OR Change Analysis</dd>
+  <dd>-Fischer Island, Corvallis, OR Change Analysis</dd>
   </dl>
