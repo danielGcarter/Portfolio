@@ -26,5 +26,6 @@ A project portfolio for Daniel Carter summarizing his skills and abilities relat
   
   <dl>
   <dt>Change Analysis Project</dt>
+  A project analyzing changes to the Fischer Island area of the Willamette River in Corvallis, Oregon due to human activity. 
   <dd>-Fischer Island, Corvallis, OR Change Analysis</dd>
   </dl>
