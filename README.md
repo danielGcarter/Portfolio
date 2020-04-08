@@ -29,3 +29,9 @@ A project portfolio for Daniel Carter summarizing his skills and abilities relat
   A project analyzing changes to the Fischer Island area of the Willamette River in Corvallis, Oregon due to human activity. 
   <dd>-Fischer Island, Corvallis, OR Change Analysis</dd>
   </dl>
+  
+  <dl>
+  <dt>Toutle River Change Analysis</dt>
+  An analysis of the Toutle and Cowlitz river confluence after the eruption of Mt. St. Helens in 1980.
+  <dd>-Toutle and Cowlitz River Change Analysis</dd>
+  </dl>
